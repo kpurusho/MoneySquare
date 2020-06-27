@@ -1,0 +1,2 @@
+# MoneySquare
+Personal money manager
