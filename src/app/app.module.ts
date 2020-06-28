@@ -3,13 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CalculatorModule } from './calculator/calculator.module';
+import { MyInvestmentModule } from './myinvestment/MyInvestment.module';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,
+    CalculatorModule,
+    MyInvestmentModule,
     AppRoutingModule
   ],
   providers: [],
