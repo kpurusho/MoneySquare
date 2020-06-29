@@ -5,13 +5,16 @@ import {CalculatorComponent } from './calculator/calculator.component';
 import { CalculatorSidemenuComponent } from './calculator-sidemenu/calculator-sidemenu.component';
 import { CalculatorHomeComponent } from './calculator-home/calculator-home.component';
 import { RetirementComponent } from './retirement/retirement.component'
+import { FormsModule } from '@angular/forms';
+import { ReturnsComponent } from './returns/returns.component';
 
 
 @NgModule({
-  declarations: [CalculatorComponent, CalculatorSidemenuComponent, CalculatorHomeComponent, RetirementComponent],
+  declarations: [CalculatorComponent, ReturnsComponent, CalculatorSidemenuComponent, CalculatorHomeComponent, RetirementComponent],
   imports: [
     CalculatorRoutingModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class CalculatorModule { }

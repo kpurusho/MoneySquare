@@ -1,1 +1,23 @@
-<p>returns works!</p>
+<div class="container">
+    <h2>{{title}}</h2>
+    <div class="form-group">
+        <label for="totinvest">Total investment:</label>
+        <input [(ngModel)]='presentValue' class="form-control" id="totinvest">
+    </div>
+    <div class="form-group">
+        <label for="rateofret">Rate of returns:</label>
+        <input [(ngModel)]='rateOfReturn' class="form-control" id="rateofret">
+    </div>
+    <div class="form-group">
+        <label for="investyrs">Years of investment:</label>
+        <input [(ngModel)]='investmentDurationInYrs' class="form-control" id="investyrs">
+    </div>
+    <div class="form-group">
+        <label for="ciperyear">Number of compound interest in a year:</label>
+        <input [(ngModel)]='numberOfCompoundInterestInYear' class="form-control" id="ciperyear">
+    </div>
+    <div class="jumbotron">
+        <h3>Returns</h3>
+        <p>{{returns}}</p>
+      </div>
+</div>  
