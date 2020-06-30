@@ -2,22 +2,36 @@
     <h2>{{title}}</h2>
     <div class="form-group">
         <label for="totinvest">Total investment:</label>
-        <input [(ngModel)]='presentValue' class="form-control" id="totinvest">
+        <input [(ngModel)]='presentValue' class="form-control" id="totinvest" type="number" min="0" max="100000000000">
     </div>
     <div class="form-group">
         <label for="rateofret">Rate of returns:</label>
-        <input [(ngModel)]='rateOfReturn' class="form-control" id="rateofret">
+        <div class="d-flex my-4">
+            <div class="w-100">
+                <input [(ngModel)]='rateOfReturn' type="range" class="custom-range" id="rateofret" min="1" max="100" step="0.25">
+            </div>
+            <span class="font-weight-bold text-primary ml-2 valueSpan2">{{rateOfReturn}}%</span>
+        </div>
     </div>
     <div class="form-group">
         <label for="investyrs">Years of investment:</label>
-        <input [(ngModel)]='investmentDurationInYrs' class="form-control" id="investyrs">
+        <div class="d-flex my-4">
+            <div class="w-100">
+                <input [(ngModel)]='investmentDurationInYrs' type="range" class="custom-range" id="investyrs" min="1" max="75">
+            </div>
+            <span class="font-weight-bold text-primary ml-2 valueSpan2">{{investmentDurationInYrs}}</span>
+        </div>
     </div>
     <div class="form-group">
         <label for="ciperyear">Number of compound interest in a year:</label>
-        <input [(ngModel)]='numberOfCompoundInterestInYear' class="form-control" id="ciperyear">
+        <div class="d-flex my-4">
+            <div class="w-100">
+                <input [(ngModel)]='numberOfCompoundInterestInYear' type="range" class="custom-range" id="ciperyear" min="1" max="12">
+            </div>
+            <span class="font-weight-bold text-primary ml-2 valueSpan2">{{numberOfCompoundInterestInYear}}</span>
+        </div>
     </div>
-    <div class="jumbotron">
-        <h3>Returns</h3>
-        <p>{{returns}}</p>
-      </div>
+    <div class="alert alert-secondary">
+        <strong>{{returns | currency:'INR':'symbol':'1.2-2' }}</strong>
+    </div>
 </div>  
