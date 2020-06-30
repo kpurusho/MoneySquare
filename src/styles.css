@@ -3,13 +3,29 @@
 @import "~font-awesome/css/font-awesome.min.css";
 
 div.card-header {
-    font-size: large;
-   }
-   
-   div.card {
-     margin-top: 10px
-   }
-   
-   .table {
-     margin-top: 10px
-   }
+  font-size: large;
+  font-weight: bold;
+}
+
+div.card-footer {
+  font-size: large;
+}
+
+div.card {
+  margin-top: 10px
+}
+
+div.card {
+  margin-left: 10px
+}
+
+.table {
+  margin-top: 10px
+}
+
+div.form-group {
+  margin-top: 10px; 
+  margin-bottom: 10px; 
+  margin-left: 20px; 
+  margin-right: 20px;
+}

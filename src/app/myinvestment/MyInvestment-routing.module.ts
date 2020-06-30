@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { MyinvestmentComponent } from './myinvestment/myinvestment.component'
-import { GoalComponent } from './goal/goal.component';
+import { ListGoalComponent } from './goal/list-goal.component';
+import { AddGoalComponent } from './goal/add-goal/add-goal.component';
 import { InvestmentComponent } from './investment/investment.component';
 import { MyinvestmentHomeComponent } from './myinvestment-home/myinvestment-home.component'
 import { MyinvestmentSidemenuComponent } from './myinvestment-sidemenu/myinvestment-sidemenu.component'
+import { EditGoalComponent } from './goal/edit-goal/edit-goal.component';
 
 const routes: Routes = [
   { 
@@ -18,7 +20,15 @@ const routes: Routes = [
       },
       {
         path:'goal',
-        component: GoalComponent
+        component: ListGoalComponent
+      },
+      {
+        path:'goal/:id',
+        component: EditGoalComponent
+      },
+      {
+        path:'add-goal',
+        component: AddGoalComponent
       },
       {
         path:'investment',

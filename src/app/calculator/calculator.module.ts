@@ -10,7 +10,12 @@ import { ReturnsComponent } from './returns/returns.component';
 
 
 @NgModule({
-  declarations: [CalculatorComponent, ReturnsComponent, CalculatorSidemenuComponent, CalculatorHomeComponent, RetirementComponent],
+  declarations: [
+    CalculatorComponent,
+    ReturnsComponent, 
+    CalculatorSidemenuComponent, 
+    CalculatorHomeComponent, 
+    RetirementComponent],
   imports: [
     CalculatorRoutingModule,
     CommonModule,
