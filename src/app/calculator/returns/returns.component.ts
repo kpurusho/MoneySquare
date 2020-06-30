@@ -7,7 +7,7 @@ import { CalculatorService } from '../calculator.service'
   styleUrls: ['./returns.component.css']
 })
 export class ReturnsComponent implements OnInit {
-  title: string = "Lumsum returns calculator:"
+  title: string = "Lumpsum returns calculator:"
   _presentValue: number = 10000;
   _rateOfReturn: number = 8.0;
   _investmentDurationInYrs: number = 10;
