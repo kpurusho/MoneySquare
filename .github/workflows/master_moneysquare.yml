@@ -24,7 +24,6 @@ jobs:
       run: |
         npm install
         npm run build --if-present
-        npm run test --if-present
 
     - name: 'Deploy to Azure Web App'
       uses: azure/webapps-deploy@v1
@@ -32,4 +31,4 @@ jobs:
         app-name: 'moneysquare'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b4c5913274fd4d43bb17540f93a3f0b3 }}
-        package: .
+        package: ./dist/MoneySquare
