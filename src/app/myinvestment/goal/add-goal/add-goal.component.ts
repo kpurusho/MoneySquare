@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Goal } from '../../model/Goal';
 import { Router } from '@angular/router';
 import { GoalService } from '../../service/goal.service';
+import { Guid } from 'guid-typescript';
 
 @Component({
   selector: 'app-add-goal',
@@ -10,7 +11,8 @@ import { GoalService } from '../../service/goal.service';
 })
 export class AddGoalComponent implements OnInit {
   title:string = 'Add Goal';
-  goal: Goal = { id : 0,
+  goal: Goal = { id : Guid.create().toString(),
+    user: 'karthik',
     name: 'New goal',
     targetDate : new Date(),
     targetAmount : 1000

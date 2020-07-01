@@ -1,5 +1,6 @@
 export interface Goal {
-    id: number,
+    id: string,
+    user: string,
     name: string,
     targetDate: Date,
     targetAmount: number

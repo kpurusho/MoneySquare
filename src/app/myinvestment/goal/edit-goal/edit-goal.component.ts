@@ -18,11 +18,10 @@ export class EditGoalComponent implements OnInit {
     private goalService: GoalService) { }
 
   ngOnInit() {
-    let id = +this.route.snapshot.paramMap.get('id');
-    this.goalService.getGoals().subscribe({
-      next: prods => {
-        let p = prods.filter((goal: Goal) => goal.id === id);
-        this.goal = p[0];
+    let id = this.route.snapshot.paramMap.get('id');
+    this.goalService.getGoal(id).subscribe({
+      next: g => {
+        this.goal = g;
       }
     })
   }

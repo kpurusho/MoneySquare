@@ -9,6 +9,7 @@ import { Goal } from '../model/Goal'
 export class GoalService {
 
   constructor(private http: HttpClient) { }
+  //baseUrl: string = 'http://127.0.0.1:5000/goals';
   baseUrl: string = 'https://moneysquarebackend.azurewebsites.net/goals';
 
   getGoals(): Observable<Goal[]> {
