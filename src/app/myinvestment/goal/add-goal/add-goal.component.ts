@@ -13,7 +13,7 @@ export class AddGoalComponent implements OnInit {
   goal: Goal = { id : 0,
     name: 'New goal',
     targetDate : new Date(),
-    targetAmount : 0
+    targetAmount : 1000
   };
 
   constructor(private router: Router, private goalService: GoalService) { }

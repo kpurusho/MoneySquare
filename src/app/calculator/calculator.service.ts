@@ -7,14 +7,15 @@ import { tap, catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class CalculatorService {
-  private calculatorUrl:string = 'https://moneysquarecalculator.azurewebsites.net/api/lumpsumreturns/'
+  //private calculatorUrl:string = 'https://moneysquarecalculator.azurewebsites.net/api/lumpsumreturns/'
+  private calculatorUrl:string = 'https://moneysquarebackend.azurewebsites.net/lumpsumreturns'
   constructor(private http: HttpClient) { }
 
   getReturns(presentValue: number, rateOfReturn: number,
     investmentDurationInYears: number, numberOfCompoundInterestInYear: number) : Observable<string> {
       let httpparams = new HttpParams();
-      httpparams = httpparams.append('code', 'RcR8PAFtwgyoDIasjR0e9LvG0Fkt04rDJ49imtf8NWmiE3YEpl1NfA==');
-      httpparams = httpparams.append('clientId', 'apim-MoneySquareCalculator');
+      //httpparams = httpparams.append('code', 'RcR8PAFtwgyoDIasjR0e9LvG0Fkt04rDJ49imtf8NWmiE3YEpl1NfA==');
+      //httpparams = httpparams.append('clientId', 'apim-MoneySquareCalculator');
       httpparams = httpparams.append('presentValue', presentValue.toString());
       httpparams = httpparams.append('rateOfReturn', rateOfReturn.toString());
       httpparams = httpparams.append('investmentDurationInYears', investmentDurationInYears.toString());

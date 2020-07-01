@@ -9,14 +9,14 @@ import { Goal } from '../model/Goal'
 export class GoalService {
 
   constructor(private http: HttpClient) { }
-  baseUrl: string = 'assets/goals/goals.json';
+  baseUrl: string = 'https://moneysquarebackend.azurewebsites.net/goals';
 
   getGoals(): Observable<Goal[]> {
-    return this.http.get<Goal[]>(this.baseUrl);
+    return this.http.get<Goal[]>(this.baseUrl + '?user=karthik');
   }
 
   getGoal(id: any): Observable<Goal> {
-    return this.http.get<Goal>(this.baseUrl + id);
+    return this.http.get<Goal>(this.baseUrl + '/' + id);
   }
 
   createGoal(goal: Goal): Observable<any> {
@@ -24,10 +24,10 @@ export class GoalService {
   }
 
   updateGoal(goal: Goal): Observable<any> {
-    return this.http.put<any>(this.baseUrl + goal.id, goal);
+    return this.http.put<any>(this.baseUrl + '/' + goal.id, goal);
   }
 
   deleteGoal(id: any): Observable<any> {
-    return this.http.get<Goal>(this.baseUrl + id);
+    return this.http.delete<Goal>(this.baseUrl + '/' + id);
   }
 }

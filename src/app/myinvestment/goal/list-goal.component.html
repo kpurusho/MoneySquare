@@ -16,7 +16,7 @@
       <tbody>
       <tr *ngFor="let goal of goals">
         <td>{{goal.name}}</td>
-        <td>{{goal.targetDate}}</td>
+        <td>{{goal.targetDate | date:'longDate'}}</td>
         <td>{{goal.targetAmount}}</td>
         <td>
           <button class="btn btn-info btn-sm" (click)="deleteGoal(goal)"> Delete</button>
