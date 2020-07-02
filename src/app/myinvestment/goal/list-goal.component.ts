@@ -30,8 +30,6 @@ export class ListGoalComponent implements OnInit {
   };
 
   editGoal(goal: Goal): void {
-    window.localStorage.removeItem("editGoalId");
-    window.localStorage.setItem("editGoalId", goal.id.toString());
     this.router.navigate(['myinvestment/goal', goal.id]);
   };
 

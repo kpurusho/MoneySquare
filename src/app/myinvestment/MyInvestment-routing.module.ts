@@ -4,10 +4,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { MyinvestmentComponent } from './myinvestment/myinvestment.component'
 import { ListGoalComponent } from './goal/list-goal.component';
 import { AddGoalComponent } from './goal/add-goal/add-goal.component';
-import { InvestmentComponent } from './investment/investment.component';
+import { ListInvestmentComponent } from './investment/list-investment.component';
 import { MyinvestmentHomeComponent } from './myinvestment-home/myinvestment-home.component'
 import { MyinvestmentSidemenuComponent } from './myinvestment-sidemenu/myinvestment-sidemenu.component'
 import { EditGoalComponent } from './goal/edit-goal/edit-goal.component';
+import { EditInvestmentComponent } from './investment/edit-investment/edit-investment.component';
+import { AddInvestmentComponent } from './investment/add-investment/add-investment.component';
 
 const routes: Routes = [
   { 
@@ -32,7 +34,15 @@ const routes: Routes = [
       },
       {
         path:'investment',
-        component: InvestmentComponent
+        component: ListInvestmentComponent
+      },
+      {
+        path:'investment/:id',
+        component: EditInvestmentComponent
+      },
+      {
+        path:'add-investment',
+        component: AddInvestmentComponent
       },
       {
         path: '',
