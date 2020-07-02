@@ -9,8 +9,8 @@ import { Investment } from '../model/Investment'
 export class InvestmentService {
 
   constructor(private http: HttpClient) { }
-  baseUrl: string = 'http://127.0.0.1:5000/investments';
-  //baseUrl: string = 'https://moneysquarebackend.azurewebsites.net/investments';
+  //baseUrl: string = 'http://127.0.0.1:5000/investments';
+  baseUrl: string = 'https://moneysquarebackend.azurewebsites.net/investments';
 
   getInvestments(): Observable<Investment[]> {
     return this.http.get<Investment[]>(this.baseUrl + '?user=karthik');
