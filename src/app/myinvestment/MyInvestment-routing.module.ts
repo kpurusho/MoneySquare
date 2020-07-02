@@ -10,11 +10,13 @@ import { MyinvestmentSidemenuComponent } from './myinvestment-sidemenu/myinvestm
 import { EditGoalComponent } from './goal/edit-goal/edit-goal.component';
 import { EditInvestmentComponent } from './investment/edit-investment/edit-investment.component';
 import { AddInvestmentComponent } from './investment/add-investment/add-investment.component';
+import {AuthGuard} from '../auth.guard'
 
 const routes: Routes = [
   { 
     path: 'myinvestment', 
     component: MyinvestmentHomeComponent,
+    canActivate: [ AuthGuard ], 
     children: [
       {
         path:'',

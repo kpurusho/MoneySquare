@@ -3,6 +3,7 @@ import { Goal } from '../../model/Goal';
 import { Router } from '@angular/router';
 import { GoalService } from '../../service/goal.service';
 import { Guid } from 'guid-typescript';
+import { AuthStateService } from 'src/app/auth-state.service';
 
 @Component({
   selector: 'app-add-goal',
@@ -12,13 +13,15 @@ import { Guid } from 'guid-typescript';
 export class AddGoalComponent implements OnInit {
   title:string = 'Add Goal';
   goal: Goal = { id : Guid.create().toString(),
-    user: 'karthik',
+    user: this.authStateService.user.email,
     name: 'New goal',
     targetDate : new Date(),
     targetAmount : 1000
   };
 
-  constructor(private router: Router, private goalService: GoalService) { }
+  constructor(private router: Router, 
+    private goalService: GoalService,
+    private authStateService: AuthStateService) { }
 
   ngOnInit() {
   }

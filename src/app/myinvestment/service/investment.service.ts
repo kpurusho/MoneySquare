@@ -2,18 +2,20 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Investment } from '../model/Investment'
+import { AuthStateService } from 'src/app/auth-state.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InvestmentService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+    private authStateService: AuthStateService) { }
   //baseUrl: string = 'http://127.0.0.1:5000/investments';
   baseUrl: string = 'https://moneysquarebackend.azurewebsites.net/investments';
 
   getInvestments(): Observable<Investment[]> {
-    return this.http.get<Investment[]>(this.baseUrl + '?user=karthik');
+    return this.http.get<Investment[]>(this.baseUrl + '?user=' + this.authStateService.user.email);
   }
 
   getInvestment(id: any): Observable<Investment> {
