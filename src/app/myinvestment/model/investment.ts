@@ -4,5 +4,7 @@ export interface Investment {
     name: string,
     expectedReturns: number,
     maturityDate: Date,
-    currentAmount: number
+    maturityAmount: number,
+    balanceAmount: number,
+    balanceAsOnDate: Date,
 }

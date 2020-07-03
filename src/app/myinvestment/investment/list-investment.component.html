@@ -8,18 +8,20 @@
         <thead>
         <tr>
           <th>Investment Name</th>
-          <th>Current amount</th>
+          <th>Balance amount</th>
           <th>Expected returns</th>
           <th>Maturity date</th>
+          <th>Maturity amount</th>
           <th></th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let investment of investments">
           <td>{{investment.name}}</td>
-          <td>{{investment.currentAmount}}</td>
+          <td>{{investment.balanceAmount | currency:'INR':'symbol':'1.0-0'}}</td>
           <td>{{investment.expectedReturns}}</td>
           <td>{{investment.maturityDate | date:'longDate'}}</td>
+          <td>{{investment.maturityAmount | currency:'INR':'symbol':'1.0-0'}}</td>
           <td>
             <button class="btn btn-info btn-sm" (click)="deleteInvestment(investment)"> Delete</button>
             <button class="btn btn-info btn-sm" (click)="editInvestment(investment)" style="margin-left: 20px;"> Edit</button>

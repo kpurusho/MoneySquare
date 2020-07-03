@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
       this.loggedIn = (user != null);
       this.authStateService.user = this.user;
       this.authStateService.loggedIn = this.loggedIn;
+      console.info('login state changed - ' + this.authStateService.loggedIn)
     });
   } 
 

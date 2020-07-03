@@ -1,32 +1,42 @@
 <div class='card'>
-    <div class='card-header'>
-      {{title}}
-    </div>
-    <form (ngSubmit)="onSubmit()">
-      <div class="form-group">
-          <label for="investmentname">Name:</label>
-          <input [(ngModel)]='investment.name' [ngModelOptions]="{standalone: true}" class="form-control" id="totinvest" required>
-      </div>
-      <div class="form-group">
-          <label for="investmentamt">Current amount:</label>
-          <input [(ngModel)]='investment.currentAmount' [ngModelOptions]="{standalone: true}" 
-          class="form-control" id="investmentamt" type="number" min="0" max="100000000000" required>
-      </div>
-      <div class="form-group">
-        <label for="investmentamt">Expected Returns:</label>
-        <input [(ngModel)]='investment.expectedReturns' [ngModelOptions]="{standalone: true}" 
-        class="form-control" id="investmentamt" type="number" min="1" max="100" required>
-      </div>
-      <div class="form-group">
-        <label for="investmentdate">Maturity date:</label>
-        <input type="date" class="form-control" #myDate [value]="investment.maturityDate | date:'yyyy-MM-dd'" 
-        (input)="investment.maturityDate=$event.target.valueAsDate" required>
-     </div>
-      <div class='card-footer'>
-        <button class="btn btn-info" >Add</button>
-        <a [routerLink]="['/myinvestment/investment']">
-        <button type="button" class="btn btn-info" style="margin-left: 20px;">Back</button>
-        </a>
-      </div>
-    </form>
+  <div class='card-header'>
+    {{title}}
   </div>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="investmentname">Name:</label>
+      <input [(ngModel)]='investment.name' [ngModelOptions]="{standalone: true}" class="form-control" id="totinvest"
+        required>
+    </div>
+    <div class="form-group">
+      <label for="balanceamt">Balance amount:</label>
+      <input [(ngModel)]='balanceAmount' [ngModelOptions]="{standalone: true}" class="form-control"
+        id="balanceamt" type="number" min="0" max="100000000000" required>
+    </div>
+    <div class="form-group">
+      <label for="balanceamtdate">Balance as on date:</label>
+      <input type="date" class="form-control" #myDate [value]="balanceAsOnDate | date:'yyyy-MM-dd'"
+        (input)="balanceAsOnDate=$event.target.valueAsDate" required>
+    </div>
+    <div class="form-group">
+      <label for="expreturns">Expected Returns:</label>
+      <input [(ngModel)]='expectedReturns' [ngModelOptions]="{standalone: true}" class="form-control"
+        id="expreturns" type="number" min="1" max="100" required>
+    </div>
+    <div class="form-group">
+      <label for="maduritydate">Maturity date:</label>
+      <input type="date" class="form-control" #myDate [value]="maturityDate | date:'yyyy-MM-dd'"
+        (input)="maturityDate=$event.target.valueAsDate" required>
+    </div>
+    <div class="form-group">
+      <label for="investmentamt">Maturity amount:</label>
+      <strong> {{maturityAmount | currency:'INR':'symbol':'1.0-0' }}</strong>
+    </div>
+    <div class='card-footer'>
+      <button class="btn btn-info">Add</button>
+      <a [routerLink]="['/myinvestment/investment']">
+        <button type="button" class="btn btn-info" style="margin-left: 20px;">Back</button>
+      </a>
+    </div>
+  </form>
+</div>
