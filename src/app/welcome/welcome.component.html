@@ -1,1 +1,11 @@
-<p>welcome works!</p>
+<div *ngIf="loggedIn===true">
+    <h3>Welcome {{userName}}!!</h3>
+</div>
+<div *ngIf="loggedIn===false">
+    <div>
+        <h3>Welcome!!</h3>
+    </div>
+    <div>
+        <h4>Sign in to work with your investments</h4>
+    </div>
+</div>

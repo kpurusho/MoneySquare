@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthStateService } from '../auth-state.service';
 
 @Component({
   selector: 'app-welcome',
@@ -7,7 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class WelcomeComponent implements OnInit {
 
-  constructor() { }
+  get loggedIn() : boolean {
+    return this.authStateService.loggedIn;
+  }
+
+  get userName() : string {
+    return this.authStateService.user.firstName + ' ' + this.authStateService.user.lastName;
+  }
+
+  constructor(private authStateService: AuthStateService) { }
 
   ngOnInit(): void {
   }
