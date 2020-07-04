@@ -29,6 +29,11 @@
         (input)="maturityDate=$event.target.valueAsDate" required>
     </div>
     <div class="form-group">
+      <label for="recurringMonthlyInvestment">Recurring monthly investment:</label>
+      <input [(ngModel)]='recurringMonthlyInvestment' [ngModelOptions]="{standalone: true}" class="form-control"
+        id="balanceamt" type="number" min="0" max="100000000000" required>
+    </div>
+    <div class="form-group">
       <label for="investmentamt">Maturity amount:</label>
       <strong> {{maturityAmount | currency:'INR':'symbol':'1.0-0' }}</strong>
     </div>

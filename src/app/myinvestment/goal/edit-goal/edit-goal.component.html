@@ -9,13 +9,43 @@
       </div>
       <div class="form-group">
         <label for="goaldate">Target date:</label>
-        <input type="date" class="form-control" #myDate [value]="goal.targetDate | date:'yyyy-MM-dd'" 
-        (input)="goal.targetDate=$event.target.valueAsDate" required>
+        <input type="date" class="form-control" #myDate [value]="targetDate | date:'yyyy-MM-dd'" 
+        (input)="targetDate=$event.target.valueAsDate" required>
       </div>
       <div class="form-group">
           <label for="goalamt">Target amount:</label>
-          <input [(ngModel)]='goal.targetAmount' [ngModelOptions]="{standalone: true}" class="form-control" 
+          <input [(ngModel)]='targetAmount' [ngModelOptions]="{standalone: true}" class="form-control" 
           id="goalamt" type="number" min="0" max="100000000000" required>
+      </div>
+
+      <div class="form-group">
+        <label for="goalamt">Linked investments:</label>
+          <div *ngFor="let linkedinvestment of linkedInvestments; let i = index" style="margin-left: 10px;">
+            <label>
+              <input type="checkbox" id={{i}} [(ngModel)]="linkedinvestment.linked" [ngModelOptions]="{standalone: true}" 
+              (ngModelChange)="onLinkedInvestmentChange($event)" >
+              {{linkedinvestment.investment.name}}
+            </label>
+          </div>
+      </div>
+      <div class="form-group">
+        <label for="goalamt">Current accumulated amount:</label>
+        <strong> {{accumulatedAmount | currency:'INR':'symbol':'1.0-0'}}</strong>
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" [style.width.%]="goalProgress">
+            {{goalProgress}}%
+          </div>
+        </div> 
+      </div>
+
+      <div class="form-group">
+        <label for="goalamt">Projected amount:</label>
+        <strong> {{projectedAmount | currency:'INR':'symbol':'1.0-0'}}</strong>
+        <div class="progress">
+          <div class="progress-bar bg-success" role="progressbar" [style.width.%]="projectedProgress">
+            {{projectedProgress}}%
+          </div>
+        </div> 
       </div>
       <div class='card-footer'>
         <button class="btn btn-info" >Update</button>

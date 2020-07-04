@@ -3,5 +3,6 @@ export interface Goal {
     user: string,
     name: string,
     targetDate: Date,
-    targetAmount: number
+    targetAmount: number,
+    linkedInvestments: string[]
 }

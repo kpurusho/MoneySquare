@@ -7,4 +7,5 @@ export interface Investment {
     maturityAmount: number,
     balanceAmount: number,
     balanceAsOnDate: Date,
+    recurringMonthlyInvestment: number
 }

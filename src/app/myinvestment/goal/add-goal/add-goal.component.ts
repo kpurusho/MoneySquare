@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { GoalService } from '../../service/goal.service';
 import { Guid } from 'guid-typescript';
 import { AuthStateService } from 'src/app/auth-state.service';
+import { Investment } from '../../model/Investment';
 
 @Component({
   selector: 'app-add-goal',
@@ -16,7 +17,8 @@ export class AddGoalComponent implements OnInit {
     user: this.authStateService.user.email,
     name: 'New goal',
     targetDate : new Date(),
-    targetAmount : 1000
+    targetAmount : 1000,
+    linkedInvestments : []
   };
 
   constructor(private router: Router, 

@@ -13,6 +13,7 @@ export class InvestmentService {
     private authStateService: AuthStateService) { }
   //baseUrl: string = 'http://127.0.0.1:5000/investments';
   baseUrl: string = 'https://moneysquarebackend.azurewebsites.net/investments';
+  //baseUrl: string = 'http://localhost:5000/investments';
 
   getInvestments(): Observable<Investment[]> {
     return this.http.get<Investment[]>(this.baseUrl + '?user=' + this.authStateService.user.email);

@@ -21,7 +21,8 @@ export class AddInvestmentComponent implements OnInit {
     maturityDate: new Date(),
     balanceAmount: 1000,
     balanceAsOnDate: new Date(),
-    maturityAmount: 1000
+    maturityAmount: 1000,
+    recurringMonthlyInvestment: 0
   };
 
   constructor(private router: Router,
@@ -37,6 +38,14 @@ export class AddInvestmentComponent implements OnInit {
   }
   set balanceAmount(value: number) {
     this.investment.balanceAmount = value;
+    this.calculate();
+  }
+  
+  get recurringMonthlyInvestment(): number {
+    return this.investment.recurringMonthlyInvestment;
+  }
+  set recurringMonthlyInvestment(value: number) {
+    this.investment.recurringMonthlyInvestment = value;
     this.calculate();
   }
 
@@ -72,21 +81,13 @@ export class AddInvestmentComponent implements OnInit {
   }
 
   calculate(): void {
-    let investmentDurationInYrs = this.diffYears(this.maturityDate, this.balanceAsOnDate);
-    this.calculatorService.getReturns(this.balanceAmount, this.expectedReturns,
-      investmentDurationInYrs, 1).subscribe({
+    this.calculatorService.getReturnsBetweenDates(this.balanceAmount, this.expectedReturns,
+      this.balanceAsOnDate, this.maturityDate, 1, this.recurringMonthlyInvestment).subscribe({
         next: result => {
           this.maturityAmount = +result;
         },
         error: err => alert('failed to compute returns')
       });
-  }
-  diffYears(dt2: Date, dt1: Date): number {
-    dt2 = new Date(dt2);
-    dt1 = new Date(dt1);
-    var diff = (dt2.getTime() - dt1.getTime()) / 1000;
-    diff /= (60 * 60 * 24);
-    return diff / 365.25;
   }
 
   onSubmit() {
