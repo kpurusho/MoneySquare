@@ -115,8 +115,8 @@ export class EditGoalComponent implements OnInit {
     this.linkedInvestments.forEach(i => {
       if (i.linked){
         let toDate:Date = enddate;
-        if (this.goal.targetDate < enddate) {
-          toDate = this.goal.targetDate
+        if (i.investment.maturityDate < enddate) {
+          toDate = i.investment.maturityDate
         }
         results.push(this.calculatorService.getReturnsBetweenDates(i.investment.balanceAmount, i.investment.expectedReturns,
           i.investment.balanceAsOnDate, toDate, 1, i.investment.recurringMonthlyInvestment));

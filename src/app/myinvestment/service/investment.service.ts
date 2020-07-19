@@ -30,7 +30,7 @@ export class InvestmentService {
   }
 
   createInvestment(investment: Investment): Observable<any> {
-    return this.http.post<any>(this.investmentsUrl, investment);
+    return this.http.post<any>(this.investmentsUrl, investment, {headers : this.getHeader()});
   }
 
   updateInvestment(investment: Investment): Observable<any> {

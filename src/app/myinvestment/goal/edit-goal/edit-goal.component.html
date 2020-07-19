@@ -24,7 +24,7 @@
             <label>
               <input type="checkbox" id={{i}} [(ngModel)]="linkedinvestment.linked" [ngModelOptions]="{standalone: true}" 
               (ngModelChange)="onLinkedInvestmentChange($event)" >
-              {{linkedinvestment.investment.name}}
+              {{linkedinvestment.investment.name}} - {{linkedinvestment.investment.maturityDate| date:'longDate'}} - {{linkedinvestment.investment.maturityAmount | currency:'INR':'symbol':'1.0-0'}}
             </label>
           </div>
       </div>
