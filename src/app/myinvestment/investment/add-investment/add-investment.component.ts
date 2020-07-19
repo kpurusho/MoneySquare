@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { InvestmentService } from '../../service/investment.service';
 import { Guid } from 'guid-typescript';
 import { AuthStateService } from 'src/app/auth-state.service';
-import { CalculatorService } from 'src/app/calculator/calculator.service';
+import { CalculatorService } from 'src/app/calculator/service/calculator.service';
 
 @Component({
   selector: 'app-add-investment',

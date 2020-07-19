@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Investment } from '../../model/Investment';
 import { Router, ActivatedRoute } from '@angular/router';
 import { InvestmentService } from '../../service/investment.service';
-import { CalculatorService } from 'src/app/calculator/calculator.service';
+import { CalculatorService } from 'src/app/calculator/service/calculator.service';
 
 @Component({
   selector: 'app-edit-investment',

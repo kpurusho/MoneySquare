@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams, HttpErrorResponse, HttpHeaders } from '@angular/common/http'
 import { Observable, throwError } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
+import { environment } from '../../../environments/environment'
 
 @Injectable({
   providedIn: 'root'
 })
 export class CalculatorService {
+  private baseUrl:string = environment.backendBaseUrl;
   //private calculatorUrl:string = 'https://moneysquarecalculator.azurewebsites.net/api/lumpsumreturns/'
-  private calculatorUrl:string = 'https://moneysquarebackend.azurewebsites.net/lumpsumreturns'
+  private calculatorUrl:string = this.baseUrl + '/lumpsumreturns';
   //private calculatorUrl:string = 'http://localhost:5000/lumpsumreturns'
   constructor(private http: HttpClient) { }
 

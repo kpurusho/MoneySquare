@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { GoalService } from '../../service/goal.service';
 import { Investment } from '../../model/Investment';
 import { InvestmentService } from '../../service/investment.service';
-import { CalculatorService } from 'src/app/calculator/calculator.service';
+import { CalculatorService } from 'src/app/calculator/service/calculator.service';
 import { Observable, forkJoin } from 'rxjs';
 
 @Component({
