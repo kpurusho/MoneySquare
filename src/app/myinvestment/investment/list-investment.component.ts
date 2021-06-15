@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { InvestmentService } from '../service/investment.service'
-import { Investment } from '../model/investment';
+import { Investment } from '../model/Investment';
 
 
 @Component({
